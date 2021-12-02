@@ -71,17 +71,9 @@ GEM
     byebug (11.1.3)
     case_transform (0.2)
       activesupport
-    coffee-rails (5.0.0)
-      coffee-script (>= 2.2.0)
-      railties (>= 5.2.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     erubi (1.10.0)
-    execjs (2.8.1)
     ffi (1.15.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -92,7 +84,6 @@ GEM
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jsonapi-renderer (0.2.2)
-    libv8 (3.16.14.19-x86_64-linux)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -116,6 +107,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.1.4.1)
@@ -148,7 +141,6 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    ref (2.0.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -167,15 +159,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -189,18 +176,16 @@ DEPENDENCIES
   active_model_serializers
   bootsnap (>= 1.4.4)
   byebug
-  coffee-rails
   graphiql-rails
   graphql
   listen (~> 3.3)
   mysql2 (= 0.5.3)
   puma (~> 5.0)
+  rack-cors
   rails (~> 6.1.4, >= 6.1.4.1)
   sass-rails
   spring
-  therubyracer
   tzinfo-data
-  uglifier
 
 RUBY VERSION
    ruby 3.0.3p157
