@@ -1,9 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 80",
     "build": "next build",
     "start": "next start"
+  },
+  "config": {
+    "PORT": 80
   },
   "dependencies": {
     "@apollo/client": "^3.5.5",

@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-import { useRef, useState } from "react";
+import { useRef, useState, VFC } from "react";
 import { SearchSubjectReturn } from "../types/Subject";
 
 const GET_SEARCH_SUBJECT_LIST = gql`
@@ -20,7 +20,7 @@ const GET_SEARCH_SUBJECT_LIST = gql`
   }
 `;
 
-const SearchSubjectList = () => {
+const SearchSubjectList: VFC = () => {
   const [subjectTitle, setSubjectTitle] = useState(null);
   const [teacherName, setTeacherName] = useState(null);
   const inputSubjectTitleElement = useRef(null);
@@ -35,8 +35,8 @@ const SearchSubjectList = () => {
     setSubjectTitle(inputSubjectTitleElement.current.value);
     setTeacherName(inputTeacherNameElement.current.value);
   };
-  if (loading) return "ロード中....";
-  if (error) return `Error ${error.message}`;
+  if (loading) return <div>"ロード中...."</div>;
+  if (error) return <div>Error {error.message}</div>;
   return (
     <div className="w-full max-w-xs mx-auto mt-10">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -97,7 +97,9 @@ const SearchSubjectList = () => {
                   {subject.lectures.map((lecture) => {
                     return (
                       <div key={lecture.id} className="p-3">
-                        <div className="text-xs text-gray-600">ID:{lecture.id}</div>
+                        <div className="text-xs text-gray-600">
+                          ID:{lecture.id}
+                        </div>
 
                         <div className="text-xs text-gray-600">
                           カリキュラム名:{lecture.title}

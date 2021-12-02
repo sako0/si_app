@@ -32,3 +32,10 @@ services:
       RAILS_DB_PASSWORD: userpassword # MYSQL_PASSWORDと一致させる
       RAILS_ENV: development
       RAILS_HOST_URL: http://localhost:3000
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      NEXT_PUBLIC_API_SERVER_HOST:
+    command: yarn dev

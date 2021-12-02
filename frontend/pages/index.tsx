@@ -1,4 +1,4 @@
-import React from "react";
+import React, { VFC } from "react";
 import {
   ApolloClient,
   ApolloProvider,
@@ -8,7 +8,7 @@ import {
 import SearchSubjectList from "../components/SearchSubjectList";
 
 export const link = createHttpLink({
-  uri: "http://localhost:3000/graphql",
+  uri: process.env.NEXT_PUBLIC_API_SERVER_HOST + "/graphql",
 });
 
 const client: ApolloClient<any> = new ApolloClient({
@@ -16,7 +16,7 @@ const client: ApolloClient<any> = new ApolloClient({
   link,
 });
 
-const APP = () => (
+const APP: VFC = () => (
   <ApolloProvider client={client}>
     <div>
       <SearchSubjectList />
