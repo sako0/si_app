@@ -1,6 +1,6 @@
 FROM ruby:3.0.3
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update -qq && apt install -y tzdata
+RUN apt-get update -qq && apt install -y tzdata && apt-get install -y nodejs
 ENV TZ Asia/Tokyo
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP:ja
